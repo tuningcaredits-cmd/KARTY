@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="windows1250">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Tarot – Magie a péèe o duši</title>
+    <!-- Správná cesta k CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Písma z Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome ikony -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Reset základních stylù -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-moon"></i>
+                <h1>Luna Tarot</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#uvod">Úvod</a></li>
+                    <li><a href="#tarot">Tarot</a></li>
+                    <li><a href="#rezervace">Rezervace</a></li>
+                    <li><a href="#cenik">Ceník</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="uvod" class="hero">
+        <div class="container">
+            <h2>Objevte svou vnitøní sílu</h2>
+            <p>Tarotové výklady a péèe o vaši duši i tìlo v harmonickém prostøedí.</p>
+            <a href="#rezervace" class="btn">Rezervovat termín</a>
+        </div>
+    </section>
+
+    <section id="tarot" class="tarot">
+        <div class="container">
+            <h2>Tarotové výklady</h2>
+            <p>Vyberte si kartu a získejte poselství pro svùj den.</p>
+            <div class="tarot-cards">
+                <div class="tarot-card" onclick="showCardMeaning('Mág', 'Mág symbolizuje sílu, tvoøivost a schopnost promìnit své sny ve skuteènost. Je èas jednat a využít svùj potenciál.')">
+                    <img src="mag.jpg">
+                    <p>Mág</p>
+                </div>
+                <div class="tarot-card" onclick="showCardMeaning('Veleknìžka', 'Veleknìžka pøedstavuje intuici, tajemství a vnitøní moudrost. Naslouchejte svému nitru a dùvìøujte své intuici.')">
+                    <img src="veleknezna.jpg">
+                    <p>Veleknìžka</p>
+                </div>
+                <div class="tarot-card" onclick="showCardMeaning('Císaøovna', 'Císaøovna je symbolem plodnosti, péèe a harmonie. Je èas se soustøedit na sebe, svou rodinu a blízké vztahy.')">
+                    <img src="cisarovna.jpg">
+                    <p>Císaøovna</p>
+                </div>
+            </div>
+            <div id="card-meaning" class="card-meaning"></div>
+        </div>
+    </section>
+
+    <section id="rezervace" class="rezervace">
+        <div class="container">
+            <h2>Rezervace termínu</h2>
+            <p>Objednejte se na osobní výklad nebo konzultaci.</p>
+            <form id="rezervacni-formular" class="rezervacni-formular">
+                <div class="form-group">
+                    <label for="sluzba">Služba:</label>
+                    <select id="sluzba" required>
+                        <option value="">Vyberte službu</option>
+                        <option value="tarot">Tarotový výklad (30 min)</option>
+                        <option value="tarot-deluxe">Tarotový výklad (60 min)</option>
+                        <option value="kosmetika">Kosmetické ošetøení</option>
+                        <option value="masaz">Relaxaèní masáž</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="datum">Datum:</label>
+                    <input type="date" id="datum" required>
+                </div>
+                <div class="form-group">
+                    <label for="cas">Èas:</label>
+                    <input type="time" id="cas" required>
+                </div>
+                <div class="form-group">
+                    <label for="jmeno">Vaše jméno:</label>
+                    <input type="text" id="jmeno" placeholder="Vaše jméno" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="Váš e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefon">Telefon:</label>
+                    <input type="tel" id="telefon" placeholder="Telefon" required>
+                </div>
+                <button type="submit" class="btn">Rezervovat</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="cenik" class="cenik">
+        <div class="container">
+            <h2>Ceník</h2>
+            <div class="cenik-grid">
+                <div class="cenik-item">
+                    <h3>Tarotový výklad (30 min)</h3>
+                    <p class="price">600 Kè</p>
+                </div>
+                <div class="cenik-item">
+                    <h3>Tarotový výklad (60 min)</h3>
+                    <p class="price">1 000 Kè</p>
+                </div>
+                <div class="cenik-item">
+                    <h3>Kosmetické ošetøení</h3>
+                    <p class="price">800 Kè</p>
+                </div>
+                <div class="cenik-item">
+                    <h3>Relaxaèní masáž</h3>
+                    <p class="price">1 200 Kè</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontakt">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Kontakt</h3>
+                    <p><i class="fas fa-envelope"></i> info@lunatarot.cz</p>
+                    <p><i class="fas fa-phone"></i> +420 123 456 789</p>
+                    <p><i class="fas fa-map-marker-alt"></i> U Tarotu 1, Praha 1</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Sledujte nás</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luna Tarot. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showCardMeaning(cardName, meaning) {
+            const cardMeaningElement = document.getElementById('card-meaning');
+            cardMeaningElement.innerHTML = `
+                <div class="card-meaning-content">
+                    <h3>${cardName}</h3>
+                    <p>${meaning}</p>
+                </div>
+            `;
+            cardMeaningElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
